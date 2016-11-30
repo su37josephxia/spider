@@ -23,10 +23,10 @@ var catchFirstUrl = 'http://www.cnblogs.com/',	//入口页面
 
 var iMovies = 0
 
-var iStart = 97000
+var iStart = 97444
 
 
-for (var i = 1; i <= pageNum; i++) {
+for (var i = 0; i <= pageNum; i++) {
 
 
 	pageUrls.push('http://www.dy2018.com/i/' + (iStart + i) + '.html');
@@ -56,7 +56,7 @@ function requestHtml(pageUrl, callback) {
 			if (pres) {
 				var html = pres.text;
 				var $ = cheerio.load(html);
-				console.log(html)
+				//console.log(html)
 
 				var curPageUrls = $('.title_all h1');
 
@@ -64,10 +64,15 @@ function requestHtml(pageUrl, callback) {
 
 				var desc = $('div[id="Zoom"]')
 
+				var topicImg = $('img[class="topic"]')
+
 
 				console.log(curPageUrls.text())
 
 				console.log(fileUrl.text())
+
+
+				console.log(topicImg.attr("src"))
 
 				console.log(desc.html())
 
