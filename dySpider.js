@@ -16,14 +16,14 @@ var catchFirstUrl = 'http://www.cnblogs.com/',	//入口页面
 	urlsArray = [],	//存放爬取网址
 	catchDate = [],	//存放爬取数据
 	pageUrls = [],	//存放收集文章页面网站
-	pageNum = 1,	//要爬取文章的页数
+	pageNum = 1000,	//要爬取文章的页数
 	startDate = new Date(),	//开始时间
 	endDate = false;	//结束时间
 
 
 var iMovies = 0
 
-var iStart = 97444
+var iStart = 96444
 
 
 for (var i = 0; i <= pageNum; i++) {
@@ -72,9 +72,9 @@ function requestHtml(pageUrl, callback) {
 				console.log(fileUrl.text())
 
 
-				console.log(topicImg.attr("src"))
-
-				console.log(desc.html())
+				//console.log(topicImg.attr("src"))
+				//
+				//console.log(desc.html())
 
 			}
 
@@ -87,7 +87,7 @@ function getPage(res) {
 	//})
 
 
-	async.mapLimit(pageUrls, 5, requestHtml, function (err, results) {
+	async.mapLimit(pageUrls, 20, requestHtml, function (err, results) {
 
 
 	})
